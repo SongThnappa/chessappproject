@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chess App </title>
+
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="/css/styles.css"
+    
+    />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <a href="/Login">Login Page</a>
+    <a href="/WaitingRoom">WaitingRoom</a>
+    <a href="/Chat">Chat Room</a>
+    <h1>Login Page</h1>
+    <div id="titeCard">
+      <h1>Chess App</h1>
+    </div>
+    <div id="loginBox">
+      <form action="/login" method="POST" id="loginBoxForm">
+      <input type="email" id="userName" name = "loginName" placeholder="Email">
+      <br>
+      <input type="password" id="password" name = "loginPassword" placeholder="Password">
+      <br>
+      <button id="loginSubmit" >Submit</button>
+      <br>
+      <div id="newUser">New User</div>
+    </form>
+    </div>
+
+    <div id="myModal" class="modal">
+    
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Photo: <br> <input type="url" name="photo" id="photo_newUser" placeholder="http:// ..."> <button id="checkLenght">Check</button></p> 
+        <div id="newuserPhoto">Photo</div>
+        <div id="newUserEntry">
+         <div id="form_entry">
+            <p>First Name:  <br> <input required   pattern=".[A-Za-z]{2,20}" type="text" name="firstName" id="firstName_newUser" title="Must contain at least two characters A-Z"></p>
+           
+            <p>Last Name: <br> <input required pattern=".[A-Za-z]{2,20}" type="text" name="lastName" id="lastName_newUser" title="Must contain at least two characters A-Z"></p>
+            
+            <p>Email (Username): <br> <input required type="email" name="email" id="email_newUser" placeholder="h@h.com"></p>
+           
+            <p>Password: <br> <input required pattern=".{6,20}" type="password" name="password" id="newPassword1" title="Must contain at least 6 characters A-Z"></p>
+            
+            <p>Confirm Password: <br> <input required pattern=".{6,20}" type="password" name="confirm" id="newPassword2"></p>
+            
+           
+            <button id="registerSubmit">Submit</button>
+         </div>
+         <p id="passwordError"></p>
+         
+        </div> 
+
+       
+
+
+      </div>
+    <script type="text/javascript" src="./js/login.js" ></script>
+
+
+
+  </body>
+</html>

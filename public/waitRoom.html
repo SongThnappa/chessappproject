@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Waiting Room</title>
+
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      type="text/css"
+      href="./css/styles.css"
+      media="screen"
+      title="no title"
+    />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <a href="/Login">Login Page</a>
+    <a href="/WaitingRoom">WaitingRoom</a>
+    <a href="/Chat">Chat Room</a>
+
+    <div class="jumbotron">
+      <h1 class="display-4">Dating Tables</h1>
+      <p class="lead">Select a table below to start...</p>
+      <hr class="my-4" />
+
+      <div id="dateTableHolding">
+
+
+          <div class="card" style="width: 18rem;" style="float: left;">
+              <img src="./assets/startnew.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+              
+    
+                <a href="#" class="btn btn-primary">Start New Table</a>
+              </div>
+            </div>
+
+
+
+        <div class="card" style="width: 18rem;" style="float: left;">
+          <img src="./assets/waiting.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Room ID</h5>
+
+            <a href="#" class="btn btn-primary">Sit Down</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;" style="float: left;">
+          <img src="./assets/dateInProgress.png" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">Room ID</h5>
+
+           
+          </div>
+        </div>
+   
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./js/waitRoom.js" ></script>
+  </body>
+</html>
