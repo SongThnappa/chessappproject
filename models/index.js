@@ -7,6 +7,7 @@ var basename = path.basename(module.filename);
 var env = process.env.JAWSDB_URL || "development";
 var config = require(__dirname + "/../config/config.json")[env]; //dev only
 var db = {};
+var bcrypt = require("bcrypt");
 
 if (process.env.JAWSDB_URL) {
   var sequelize = new Sequelize(process.env.JAWSDB_URL);

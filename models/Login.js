@@ -1,3 +1,5 @@
+const bcrypt = require("bcrypt");
+
 module.exports = function (sequelize, DataTypes) {
   var Login = sequelize.define("Login", {
     userName: {
@@ -6,6 +8,11 @@ module.exports = function (sequelize, DataTypes) {
       validate: {
         isEmail: true
       }
+    },
+    userID: {
+      type: DataTypes.STRING,
+      defaultValue: ""
+
     },
     password: {
       type: DataTypes.STRING,
@@ -32,9 +39,39 @@ module.exports = function (sequelize, DataTypes) {
     loginStatus: {
       type: DataTypes.STRING,
       defaultValue: "signedOff"
-    }
+    },
+
+
+
+  });
+  // https://sequelize.org/master/manual/hooks.html
+  // https://www.npmjs.com/package/bcrypt
+
+  Login.beforeCreate(async (user, options) => {
+    const salt = await bcrypt.genSalt(10);
+    return bcrypt.hash(user.password, salt)
+      .then(hash => {
+        user.password = hash;
+      })
+      .catch(err => {
+        throw err;
+      });
   });
 
-  
+  Login.beforeCreate(async (user, options) => {
+    const salt = await bcrypt.genSalt(10);
+    return bcrypt.hash(user.userName, salt)
+      .then(hash => {
+        user.userID = hash;
+      })
+      .catch(err => {
+        throw err;
+      });
+  });
+
+  Login.prototype.validPassword = async (password) =>{
+    return await bcrypt.compare(password, this.password)
+  }
+
   return Login;
 };

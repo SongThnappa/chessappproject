@@ -1,5 +1,6 @@
 //boilerplate code at this point. should work....not loading my config file until I properly hide my local password in a keys/env scheme
 //have to go back to my handlebars hw for that
+//https://github.com/kelektiv/node.bcrypt.js/wiki/Installation-Instructions
 var express = require("express");
 
 var app = express();
