@@ -40,7 +40,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       defaultValue: "signedOff"
     },
-
+    
 
 
   });
@@ -48,7 +48,7 @@ module.exports = function (sequelize, DataTypes) {
   // https://www.npmjs.com/package/bcrypt
 
   Login.beforeCreate(async (user, options) => {
-    const salt = await bcrypt.genSalt(10);
+    const salt = await bcrypt.genSalt(13);
     return bcrypt.hash(user.password, salt)
       .then(hash => {
         user.password = hash;
@@ -59,7 +59,7 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Login.beforeCreate(async (user, options) => {
-    const salt = await bcrypt.genSalt(10);
+    const salt = await bcrypt.genSalt(3);
     return bcrypt.hash(user.userName, salt)
       .then(hash => {
         user.userID = hash;
@@ -69,9 +69,14 @@ module.exports = function (sequelize, DataTypes) {
       });
   });
 
-  Login.prototype.validPassword = async (password) =>{
-    return await bcrypt.compare(password, this.password)
-  }
+  // validPassword = async (password, hashedPasswords, cb) =>{
+  //   bcrypt.compare(password, hashedPassword, (err, isMatch)=> {
+  //     if(err){
+  //       throw err
+  //     }
+  //     return( null, isMatch)
+  //   });
+  // }
 
   return Login;
 };

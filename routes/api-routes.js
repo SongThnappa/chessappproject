@@ -1,4 +1,5 @@
 var db = require("../models");
+var bcrypt=require("bcrypt");
 
 
 module.exports = function (app) {
@@ -31,19 +32,29 @@ module.exports = function (app) {
         }
 
       })
-      .then (async dbLogin => {
+      .then (async dbLogin => { 
         if(!dbLogin){
           res.redirect("/login")
  
         }
-        else if(!await dbLogin.validPassword(password) ){
+        await bcrypt.compare(loginPassword, dbLogin[0].dataValues.password, function (err, isMatch){
 
-          res.redirect("/login") 
-        }
-        else{
+          if (err){
+            throw err
+          }
+          if(!isMatch){
+            console.log("mismatched")
+            return res.redirect("/login/incorrect_password")
+          }
+          return  res.redirect("/waitingroom/" + dbLogin[0].dataValues.userID.slice(15));
+        })
+
+          
+        
+    
           // res.session.dbLogin=dbLogin.dataValues;
-          res.redirect("/waitingTable/" + dbLogin[0].dataValues.userID);
-        }
+         
+        
         // console.log("user found in database");
         // console.log(user[0].dataValues.userID);
         // console.log(loginPassword);
