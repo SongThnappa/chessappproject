@@ -4,37 +4,33 @@
     <meta charset="UTF-8" />
     <title>Chess App </title>
 
-    <link
-      href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="/css/styles.css"
-    
-    />
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="./css/styles.css"/>
+
+
+
   </head>
 
   <body>
-    <a href="/Login">Login Page</a>
-    <a href="/WaitingRoom">WaitingRoom</a>
-    <a href="/Chat">Chat Room</a>
-    <h1>Login Page</h1>
+
     <div id="titeCard">
-      <h1>Chess App</h1>
+     
     </div>
+
     <div id="loginBox">
-      <form action="/login" method="POST" id="loginBoxForm">
-      <input type="email" id="userName" name = "loginName" placeholder="Email">
+      <form action="/login" method="POST" id="loginBoxForm" class="w3-container w3-card-4  w3-text-blue w3-margin">
+        <h2>Login</h2>
+      <input type="email" id="userName" name = "email" placeholder="Email">
       <br>
-      <input type="password" id="password" name = "loginPassword" placeholder="Password">
+      <input type="password" id="password" name = "password" placeholder="Password">
       <br>
-      <button id="loginSubmit" >Submit</button>
+      <button id="loginSubmit" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding" >Submit</button>
       <br>
-      <div id="newUser">New User</div>
+      <div id="newUser">Register</div>
     </form>
     </div>
 
@@ -43,8 +39,10 @@
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <p>Photo: <br> <input type="url" name="photo" id="photo_newUser" placeholder="http:// ..."> <button id="checkLenght">Check</button></p> 
-        <div id="newuserPhoto">Photo</div>
+        
+        <div id="newuserPhoto">
+          <div id="userPhoto"></div>
+          <p>Photo: <br> <input type="url" name="photo" id="photo_newUser" placeholder="http:// ..."> <button id="checkLenghth">Check</button></p> </div>
         <div id="newUserEntry">
          <div id="form_entry">
             <p>First Name:  <br> <input required   pattern=".[A-Za-z]{2,20}" type="text" name="firstName" id="firstName_newUser" title="Must contain at least two characters A-Z"></p>

@@ -2,7 +2,7 @@ const bcrypt = require("bcrypt");
 
 module.exports = function (sequelize, DataTypes) {
   var Login = sequelize.define("Login", {
-    userName: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -40,7 +40,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       defaultValue: "signedOff"
     },
-    
+
 
 
   });
@@ -60,7 +60,7 @@ module.exports = function (sequelize, DataTypes) {
 
   Login.beforeCreate(async (user, options) => {
     const salt = await bcrypt.genSalt(3);
-    return bcrypt.hash(user.userName, salt)
+    return bcrypt.hash(user.email, salt)
       .then(hash => {
         user.userID = hash;
       })
@@ -69,6 +69,10 @@ module.exports = function (sequelize, DataTypes) {
       });
   });
 
+  Login.prototype.validPassword = function (password){
+
+    return  bcrypt.compare(password, this.password)
+  }
   // validPassword = async (password, hashedPasswords, cb) =>{
   //   bcrypt.compare(password, hashedPassword, (err, isMatch)=> {
   //     if(err){
