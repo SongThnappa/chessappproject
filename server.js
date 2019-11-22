@@ -17,15 +17,24 @@ app.use(bodyparser.json());
 
 
 app.use(express.static("public"));
-app.use(cookieParser())
 
+// for security this needs to be set
+// https://stackoverflow.com/questions/23413401/what-does-trust-proxy-actually-do-in-express-js-and-do-i-need-to-use-it
 app.set('trust proxy', 1) 
+app.use(cookieParser())
 app.use(session({
   secret: 'testkey123',
   resave: true,
   saveUninitialized: true,
+  cookie: { maxAge : 7200000 } 
   
 }))
+
+// app.use(express.cookieParser("Secret123"));
+// app.use(express.session({   store: sessionStore,
+//                         cookie: { maxAge : 3600000 } //1 Hour
+//                         }));
+
 
 app.use(passport.initialize());
 app.use(passport.session());
