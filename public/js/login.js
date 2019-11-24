@@ -69,7 +69,8 @@ $(document).ready(function () {
       }).then(
         function () {
           console.log("new user added");
-          $("#passwordError").text("Profile Created");
+          $("#passwordError").text("Profile Created")
+          $("#messageBox").append($("<img>").attr("src", "/assets/new_player.png").attr("style", "max-width:100%;").attr("style","max-height:100%;"));
           $("#form_entry").empty();
           
          

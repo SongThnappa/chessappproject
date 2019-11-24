@@ -31,4 +31,15 @@ module.exports = function (app) {
     res.redirect("/waitingroom/success");
   });
 
+
+
+
+
+  app.get("/logout", function(req, res){
+    console.log("logout press")
+    req.logout();
+  
+    res.redirect('/'); 
+  });
+
 } 

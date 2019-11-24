@@ -2,9 +2,11 @@ body{
     height: 100%;
     width: 100%;
     background-image: url("./../assets/background.jpg");
-    background-size: cover;
+    background-size: fill;
     background-repeat: no-repeat;
+    background-position: center;
     margin: 0 auto;
+    font-family: 'Audiowide', cursive;
     
 }
 
@@ -30,42 +32,87 @@ body{
 
 
 #loginBoxForm {
+    border-radius: 25px;
     width: 100%;
-    height: 100%;
+    height: 100%fit-content;
     align-items: center;
     text-align: center;
     margin: 0 auto;
     background-color: rgb(61, 57, 49); 
     opacity: .79; 
  
+    padding: 10px 30px 30px 30px;
     /* background-color: blueviolet; */
 }
 
 #userName {
-
+    border-radius: 25px;
     width: 300px;
     margin: 0 auto;
 }
 
 #password {
+    border-radius: 25px;
     width: 300px;
     margin: 0 auto;
 }
-
-#submitButton {
-    width: 300px;
+#messageBox{
+    height: 85%;
+    width: 100%;
+    text-align: center;
     margin: 0 auto;
+}
+.input1{
+    text-align: center;
+   
+}
+#loginTitle{
+
+    font-family: 'Audiowide', cursive;
+    -webkit-animation-name: flasher; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    animation-name: flasher;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes flasher {
+    0%   {background-color:black; color: white;}
+    25%  {background-color:rgb(25, 231, 231); color: black;}
+    50%  {background-color:black; color: white;}
+    75%  {background-color:rgb(25, 231, 231); color: black;}
+    100% {background-color:black; color: white;}
+  }
+  
+  /* Standard syntax */
+  @keyframes flasher {
+    0%   {background-color:black; color: white;}
+    25%  {background-color:rgb(25, 231, 231); color: black;}
+    50%  {background-color:black; color: white;}
+    75%  {background-color:rgb(25, 231, 231); color: black;}
+    100% {background-color:black; color: white;}
+  }
+  
+#loginSubmit {
+    margin-top: 30px;
+    width: 200px;
+   
+   
 }
 
 #newUser {
+    margin-top: 30px;
+    border-radius: 25px;
     text-align: center;
     cursor: pointer;
+    background-color: gold;
+    
 
 }
 
 #newUser:hover {
-    background-color:teal;
-  
+    background-color:rgb(219, 255, 13);
     color: white;
 }
 
@@ -103,65 +150,57 @@ body{
     margin: auto;
     padding: 20px;
     border: 10px solid #888;
-    width: 80%;
+    width: 60%;
     /* will need to be changed for mobile */
     height: 600px;
+
+
 }
 
 /* The Close Button */
 .close {
-    color: #aaaaaa;
+  
     float: right;
-    font-size: 28px;
+    font-size: 40px;
     font-weight: bold;
+  
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: rgb(34, 194, 223);
     text-decoration: none;
     cursor: pointer;
 }
 
 #newUserEntry{
     float: left;
-    height: 80%;
-    width: 20%;
-    background-color:teal;
+    height: 450px;
+    width: 600px;
    
+   margin: 0 auto;
     align-content: center;
 
 
 }
 #form_entry{
-    background-color:gray;
-    width: 90%;
+ 
+    width: 540px;
     height: fit-content;
     margin: 0 auto;
     margin-top: 10px;
     padding: 20px 20px 20px 20px;;
 }
 
-#newuserPhoto {
-    float: right;
+.input{
+    width: 80%;
     text-align: center;
-    width: 300px;
-    height: 400px;
-    background-color:teal;
-}
-#userPhoto{
-height: 300px;
-width: 90%;
-margin: 0 auto;
-margin-top: 15px;
-background-color: white;
-
-}
-#newUserSubmit{
-    width: 170px;
 }
 
-
+#messagebox{
+    width: fit-content;
+    margin: 0 auto;
+}
 
 /* Waiting Table Area */
 .btn-primary{
