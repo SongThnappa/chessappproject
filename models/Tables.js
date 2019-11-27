@@ -2,26 +2,21 @@
 
 module.exports = function (sequelize, DataTypes) {
     var Tables = sequelize.define("Tables", {
-        dateID: {
+        gameID: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isEmail: true
-            }
+         
         },
-        date1_firstName: {
+        Player1: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isEmail: true
-            }
+         
         },
-        date2_firstName: {
+        Player2: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isEmail: true
-            }
+            defaultValue: "Waiting on Player"
+           
         },
 
     });

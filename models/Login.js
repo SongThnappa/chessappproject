@@ -69,9 +69,9 @@ module.exports = function (sequelize, DataTypes) {
       });
   });
 
-  Login.prototype.validPassword = function (password){
+  Login.prototype.validPassword = function (password) {
 
-    return  bcrypt.compare(password, this.password)
+    return bcrypt.compare(password, this.password)
   }
   // validPassword = async (password, hashedPasswords, cb) =>{
   //   bcrypt.compare(password, hashedPassword, (err, isMatch)=> {

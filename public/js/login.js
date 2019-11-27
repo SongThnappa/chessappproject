@@ -2,13 +2,13 @@ $(document).ready(function () {
 
   /* boiler plate code  https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal */
   // Get the modal
-  var modal = document.getElementById("myModal");
+  const modal = document.getElementById("myModal");
 
   // Get the button that opens the modal
-  var btn = document.getElementById("newUser");
+  const btn = document.getElementById("newUser");
 
   // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
+  const span = document.getElementsByClassName("close")[0];
 
   // When the user clicks the button, open the modal 
   btn.onclick = function () {
@@ -44,22 +44,24 @@ $(document).ready(function () {
   }
 
   $("#registerSubmit").on("click", function () {
-    var password1 = $("#newPassword1").val().trim();
-    var password2 = $("#newPassword2").val().trim();
-    var proceed = passwordCheck(password1, password2);
+    const password1 = $("#newPassword1").val().trim();
+    const password2 = $("#newPassword2").val().trim();
+    const proceed = passwordCheck(password1, password2);
     console.log(proceed)
-    
+
     if (proceed === true) {
-   
-   
-  
-      var newUser = {
+
+
+
+      const newUser = {
         first: $("#firstName_newUser").val().trim().toLowerCase(),
         last: $("#lastName_newUser").val().trim().toLowerCase(),
-        username: $("#email_newUser").val().trim().toLowerCase(),
+        email2: $("#email_newUser").val().trim().toLowerCase(),
         password: passwordFinal,
 
       }
+
+
 
       console.log(newUser);
 
@@ -67,13 +69,13 @@ $(document).ready(function () {
         type: "POST",
         data: newUser
       }).then(
-        function () {
+        function (data) {
           console.log("new user added");
           $("#passwordError").text("Profile Created")
-          $("#messageBox").append($("<img>").attr("src", "/assets/new_player.png").attr("style", "max-width:100%;").attr("style","max-height:100%;"));
+          $("#messageBox").append($("<img>").attr("src", "/assets/new_player.png").attr("style", "max-width:100%;").attr("style", "max-height:100%;"));
           $("#form_entry").empty();
-          
-         
+
+
         }
       )
 
@@ -82,7 +84,13 @@ $(document).ready(function () {
     }
   })
 
+  $("#loginSubmit").on("click", function () {
 
+    const email = $("#email").val().trim().toLowerCase();
+    localStorage.setItem("email", email);
+
+
+  })
 
 
 

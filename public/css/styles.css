@@ -1,4 +1,4 @@
-body{
+body {
     height: 100%;
     width: 100%;
     background-image: url("./../assets/background.jpg");
@@ -7,11 +7,11 @@ body{
     background-position: center;
     margin: 0 auto;
     font-family: 'Audiowide', cursive;
-    
+
 }
 
 /* Login Area */
-#titeCard{
+#titeCard {
     height: 400px;
     width: 400px;
     /* logomakr.com/1VXIun */
@@ -38,9 +38,9 @@ body{
     align-items: center;
     text-align: center;
     margin: 0 auto;
-    background-color: rgb(61, 57, 49); 
-    opacity: .79; 
- 
+    background-color: rgb(61, 57, 49);
+    opacity: .79;
+
     padding: 10px 30px 30px 30px;
     /* background-color: blueviolet; */
 }
@@ -56,49 +56,93 @@ body{
     width: 300px;
     margin: 0 auto;
 }
-#messageBox{
+
+#messageBox {
     height: 85%;
     width: 100%;
     text-align: center;
     margin: 0 auto;
 }
-.input1{
+
+.input1 {
     text-align: center;
-   
+
 }
-#loginTitle{
+
+#loginTitle {
 
     font-family: 'Audiowide', cursive;
-    -webkit-animation-name: flasher; /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
-    -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+    -webkit-animation-name: flasher;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite;
+    /* Safari 4.0 - 8.0 */
     animation-name: flasher;
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
 
 @-webkit-keyframes flasher {
-    0%   {background-color:black; color: white;}
-    25%  {background-color:rgb(25, 231, 231); color: black;}
-    50%  {background-color:black; color: white;}
-    75%  {background-color:rgb(25, 231, 231); color: black;}
-    100% {background-color:black; color: white;}
-  }
-  
-  /* Standard syntax */
-  @keyframes flasher {
-    0%   {background-color:black; color: white;}
-    25%  {background-color:rgb(25, 231, 231); color: black;}
-    50%  {background-color:black; color: white;}
-    75%  {background-color:rgb(25, 231, 231); color: black;}
-    100% {background-color:black; color: white;}
-  }
-  
+    0% {
+        background-color: black;
+        color: white;
+    }
+
+    25% {
+        background-color: rgb(25, 231, 231);
+        color: black;
+    }
+
+    50% {
+        background-color: black;
+        color: white;
+    }
+
+    75% {
+        background-color: rgb(25, 231, 231);
+        color: black;
+    }
+
+    100% {
+        background-color: black;
+        color: white;
+    }
+}
+
+/* Standard syntax */
+@keyframes flasher {
+    0% {
+        background-color: black;
+        color: white;
+    }
+
+    25% {
+        background-color: rgb(25, 231, 231);
+        color: black;
+    }
+
+    50% {
+        background-color: black;
+        color: white;
+    }
+
+    75% {
+        background-color: rgb(25, 231, 231);
+        color: black;
+    }
+
+    100% {
+        background-color: black;
+        color: white;
+    }
+}
+
 #loginSubmit {
     margin-top: 30px;
     width: 200px;
-   
-   
+
+
 }
 
 #newUser {
@@ -107,12 +151,12 @@ body{
     text-align: center;
     cursor: pointer;
     background-color: gold;
-    
+
 
 }
 
 #newUser:hover {
-    background-color:rgb(219, 255, 13);
+    background-color: rgb(219, 255, 13);
     color: white;
 }
 
@@ -159,11 +203,11 @@ body{
 
 /* The Close Button */
 .close {
-  
+
     float: right;
     font-size: 40px;
     font-weight: bold;
-  
+
 }
 
 .close:hover,
@@ -173,54 +217,57 @@ body{
     cursor: pointer;
 }
 
-#newUserEntry{
+#newUserEntry {
     float: left;
     height: 450px;
     width: 600px;
-   
-   margin: 0 auto;
+
+    margin: 0 auto;
     align-content: center;
 
 
 }
-#form_entry{
- 
+
+#form_entry {
+
     width: 540px;
     height: fit-content;
     margin: 0 auto;
     margin-top: 10px;
-    padding: 20px 20px 20px 20px;;
+    padding: 20px 20px 20px 20px;
+    ;
 }
 
-.input{
+.input {
     width: 80%;
     text-align: center;
 }
 
-#messagebox{
+#messagebox {
     width: fit-content;
     margin: 0 auto;
 }
 
 /* Waiting Table Area */
-.btn-primary{
+.btn-primary {
     width: 100%;
     margin: 0 auto;
     background-color: red;
     color: black;
 
 }
-.table{
+
+.table {
     width: 100px;
     float: left;
     margin-left: 15%;
 }
 
 
-#menuCard{
-text-align: center;
-color: white;
-background: teal;
-border: 3px solid black;
-opacity: .6;
+#menuCard {
+    text-align: center;
+    color: white;
+    background: teal;
+    border: 3px solid black;
+    opacity: .6;
 }
