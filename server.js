@@ -23,7 +23,7 @@ app.use(express.static("public"));
 app.set('trust proxy', 1) 
 app.use(cookieParser())
 app.use(session({
-  secret: 'testkey123',
+  secret: process.env.LOCAL_SECRET_COOKIE,
   resave: true,
   saveUninitialized: true,
   cookie: { maxAge : 7200000 } 

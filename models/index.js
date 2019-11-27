@@ -1,23 +1,24 @@
 "use strict";
-
+require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
 const basename = path.basename(module.filename);
-const env = process.env.JAWSDB_URL || "development";
+// changed this in order to no longer have to worry about public pushes to git hub 
+const localkeys = require("../keys").localServerKeys;
+const prodkeys = require("../keys").productionServerKeys;
+
+var env = process.env.JAWSDB_URL || localkeys || prodkeys;
 // const config = require(__dirname + "/../config/config.json")[env]; //dev only
 const db = {};
 const bcrypt = require("bcrypt");
 
-if (process.env.JAWSDB_URL) {
-  var sequelize = new Sequelize(process.env.JAWSDB_URL);
-} else if (config.use_env_variable) {
+  
 
-  var sequelize = new Sequelize(process.env[config.use_env_variable]);
 
-} else {
-  var sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+const sequelize = new Sequelize(env);
+
+
 
 fs
   .readdirSync(__dirname)
