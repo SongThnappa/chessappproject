@@ -6,6 +6,12 @@ exports.localServerKeys = {
     password: process.env.local_password,
     database:process.env.local_database,
     dialect: process.env.prod_dialect,
+    timezone: process.env.local_timezone,
+    pool: { 
+        max: parseInt(process.env.seqlzmax),
+        min: parseInt(process.env.seqlzmin),
+        idle: parseInt(process.env.seqlzidle)
+        }
   }; 
 
   exports.productionServerKeys = {
@@ -15,6 +21,12 @@ exports.localServerKeys = {
     username:process.env.prod_username,
     password: process.env.prod_password,
     database:process.env.prod_database,
-    dialect:  process.env.prod_dialect
+    dialect:  process.env.prod_dialect,
+    timezone: process.env.prod_timezone,
+    pool: { 
+        max: parseInt(process.env.seqlzmax),
+        min: parseInt(process.env.seqlzmin),
+        idle: parseInt(process.env.seqlzidle)
+        }
   }; 
  

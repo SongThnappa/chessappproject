@@ -7,18 +7,9 @@ const basename = path.basename(module.filename);
 // changed this in order to no longer have to worry about public pushes to git hub 
 const localkeys = require("../keys").localServerKeys;
 const prodkeys = require("../keys").productionServerKeys;
-
-var env = process.env.JAWSDB_URL || localkeys || prodkeys;
-// const config = require(__dirname + "/../config/config.json")[env]; //dev only
+const env = process.env.JAWSDB_URL || localkeys || prodkeys;
 const db = {};
-const bcrypt = require("bcrypt");
-
-  
-
-
 const sequelize = new Sequelize(env);
-
-
 
 fs
   .readdirSync(__dirname)
@@ -38,5 +29,5 @@ Object.keys(db).forEach(function (modelName) {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-
+console.log(db)
 module.exports = db;
