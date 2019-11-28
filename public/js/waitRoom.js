@@ -37,8 +37,11 @@ $(document).ready(function () {
             type: "POST",
             data: gameInfo
         }).then((data) => {
-            window.location.href = data
+            window.location.href = data;
+            return false;
         });
+
+        localStorage.setItem("player", "Player1");
        
 
     })

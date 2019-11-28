@@ -8,9 +8,10 @@ require("./config/passport");
 const session = require("express-session");
 const app = express();
 const PORT = process.env.PORT || 8080;
-const bodyparser=require("body-parser")
+const bodyparser=require("body-parser");
 const cookieParser = require('cookie-parser')
 const db = require("./models");
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyparser.json());
@@ -41,6 +42,7 @@ app.use(passport.session());
 
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
+require("./routes/socket");
 // require("./config/passport.js")(passport);
 
 db.sequelize.sync({ force: false }).then(function() {
