@@ -54,10 +54,27 @@ $(document).ready(function () {
         $.ajax("/newgame", {
             type: "POST",
             data: gameInfo
-        }).then((done)=>{
-            console.log(done);
+        }).then((data)=>{
+            window.location.href = data
             
         });
+
+        // $.ajax({
+        //     type: "POST",
+        //     url: "/newgame",
+        //     data: gameInfo,
+        //     dataType: "json",
+        //     success: function(data, textStatus) {
+        //         console.log("success")
+        //         if (data.redirect) {
+        //             // data.redirect contains the string URL to redirect to
+        //             window.location.href = data.redirect;
+        //         } else {
+        //             // data.form contains the HTML for the replacement form
+        //             console.log(data);
+        //         }
+        //     }
+        // });
 
     })
 

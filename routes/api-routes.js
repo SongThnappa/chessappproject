@@ -73,7 +73,7 @@ module.exports = function (app) {
 
   });
 
-  app.post("/game/:gameID", function (req, res,err) {
+  app.post("/newgame", function (req, res, err) {
 
     const {
       gameID,
@@ -99,7 +99,7 @@ module.exports = function (app) {
           })
           .then(function (dbTables) {
             console.log(`new game created ID : ${gameID}`);
-            res.redirect("/game/" + gameID);
+            res.send("/game/" + gameID);
             //first time using back ticks
 
 
