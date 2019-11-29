@@ -21,7 +21,8 @@ body {
     margin: 0 auto;
 
 }
-#titleCardSmall{
+
+#titleCardSmall {
     height: 200px;
     width: 200px;
     /* logomakr.com/1VXIun */
@@ -66,6 +67,12 @@ body {
     margin: 0 auto;
 }
 
+#email {
+    border-radius: 25px;
+    width: 300px;
+    margin: 0 auto;
+}
+
 #messageBox {
     height: 85%;
     width: 100%;
@@ -79,7 +86,7 @@ body {
 }
 
 #loginTitle {
-
+    border-radius: 25px;
     font-family: 'Audiowide', cursive;
     -webkit-animation-name: flasher;
     /* Safari 4.0 - 8.0 */
@@ -91,7 +98,8 @@ body {
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
-.flash{
+
+.flash {
     -webkit-animation-name: flasher;
     /* Safari 4.0 - 8.0 */
     -webkit-animation-duration: 1s;
@@ -160,9 +168,23 @@ body {
 
 #loginSubmit {
     margin-top: 30px;
-    width: 200px;
+    width: 300px;
+    font-size: 24px;
+    border-radius: 25px;
 
 
+}
+
+#loginSubmit:active {
+    -webkit-animation-name: flasher;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite;
+    /* Safari 4.0 - 8.0 */
+    animation-name: flasher;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
 }
 
 #newUser {
@@ -209,7 +231,7 @@ body {
 /* Modal Content */
 .modal-content {
     background-color: black;
-    opacity: 0.9;
+
     color: white;
     margin: auto;
     padding: 20px;
@@ -295,67 +317,149 @@ body {
 
 /* chat area for chess game */
 
-.chatBox{
+.chatBox {
     border-radius: 25px;
-    background-color:white;
+    background-color: white;
     height: 90%;
     width: 90%;
     margin: 0 auto;
     margin-top: 20px;
-    color:rgb(34, 194, 223);
-    overflow-y:auto;
+    color: rgb(34, 194, 223);
+    overflow-y: auto;
     min-width: 200px;
 
 }
-.chatBoxContainer{
+
+.chatBoxContainer {
     border-radius: 25px;
-    background-color:rgb(34, 194, 223);
+    background-color: rgb(34, 194, 223);
     min-width: 220px;
-    
+
 }
 
 
-#chatInput{
+#chatInput {
     border-radius: 25px;
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    border: 3px solid black;
+    font-size: 20px;
 
 }
-#chatInputDiv{
+
+#chatInputDiv {
     width: 50%;
     margin: 0 auto;
 }
-.sendmessage{
+
+.sendmessage {
     border-radius: 25px;
     width: 100%;
     background-color: gold;
     border: 3px solid black;
+    text-align: center;
+    font-size: 30px;
+    color: black;
 }
 
-.chessBlock{
-    height: 75px; 
+.sendmessage:hover {
+    background-color: black;
+    color: white;
+    border: 3px solid rgb(34, 194, 223);
+}
+
+.chessBlock {
+    height: 75px;
     width: 75px;
-    /* background-image: url("./../assets/white_pawn.png"); */
+
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 }
-#chessboardContainer{
-    width: 600px;
+
+#chessboardContainer {
+    width: 700px;
     height: 650px;
+
     margin: 0 auto;
-   
+
+}
+
+#chessboard {
+    width: auto;
+    margin: 0 auto;
 }
 
 
-.whitebg{
+.whitebg {
     background-color: white;
 }
 
-.blackbg{
-    background-color: black;
+.blackbg {
+    background-color: rgb(75, 75, 75);
 }
-.chessBlock:active{
+
+.chessBlock:active {
     border: 3px solid yellow;
+}
+
+
+#wp {
+    background-image: url("./../assets/white_pawn.png")
+}
+
+#wkn {
+    background-image: url("./../assets/white_knight.png")
+}
+
+#wr {
+    background-image: url("./../assets/white_rook.png")
+}
+
+#wq {
+    background-image: url("./../assets/white_queen.png")
+}
+
+#wkg {
+    background-image: url("./../assets/white_king.png")
+}
+
+#wb {
+    background-image: url("./../assets/white_bishop.png")
+}
+
+#bp {
+    background-image: url("./../assets/black_pawn.png")
+}
+
+#bkn {
+    background-image: url("./../assets/black_knight.png")
+}
+
+#br {
+    background-image: url("./../assets/black_rook.png")
+}
+
+#bq {
+    background-image: url("./../assets/black_queen.png")
+}
+
+#bkg {
+    background-image: url("./../assets/black_king.png")
+}
+
+#bb {
+    background-image: url("./../assets/black_bishop.png")
+}
+
+.file {
+    background-color: rgb(34, 194, 223);
+    text-align: center;
+    width: 30px;
+}
+
+.rank {
+    background-color: rgb(34, 194, 223);
+    text-align: center;
 }
