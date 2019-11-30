@@ -252,6 +252,10 @@ $(".chessBlock").on("click", function () {
                 moving = false;
                 moveSend = [];
                 turn=oppossingSide;
+                var jQvarUser = "#"+side+"side";
+                $(jQvarUser).attr("style", "opacity: .25;");
+                var jQvarOpponent = "#"+oppossingSide+"side";
+                $(jQvarOpponent).attr("style", "opacity: .9;");
 
                     //testing purposes
                     // switcher = opposingSide;
@@ -295,6 +299,10 @@ $(".chessBlock").on("click", function () {
                 // opposingSide = side;
                 // side =  switcher;
                 // switcher = "";
+                var jQvarUser = "#"+side+"side";
+                $(jQvarUser).attr("style", "opacity: .25;");
+                var jQvarOpponent = "#"+oppossingSide+"side";
+                $(jQvarOpponent).attr("style", "opacity: .9;");
             }
         }
 
@@ -359,7 +367,10 @@ socket.on("move", data =>{
     var final = "";
     var target = "";
     turn=side;
-
+    var jQvarUser = "#"+side+"side";
+    $(jQvarUser).attr("style", "opacity: .9;");
+    var jQvarOpponent = "#"+oppossingSide+"side";
+    $(jQvarOpponent).attr("style", "opacity: .25;");
     console.log(turn)
 
 })
