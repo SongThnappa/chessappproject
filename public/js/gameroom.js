@@ -34,6 +34,8 @@ $(document).ready(function() {
             socket.emit("side-send", side);
             oppossingSideFunc();
             sideChoosen = true;
+            $("#chessboardContainer").attr("class", "whiteFlip");
+            $("#chessboard").attr("id", "chessboardWhite");
         }
   
 
@@ -41,7 +43,7 @@ $(document).ready(function() {
     })
 
     socket.on("side-checker", data=>{
-        var opponentHolder;
+       
         if(data === "white_taken"){
             sideChoosen = true;
             side ="black";
@@ -68,8 +70,9 @@ $(document).ready(function() {
             var jQvarOpponent = "#"+oppossingSide+"side";
             $(jQvarUser).text("You");
             $(jQvarOpponent).text("Opponent");
-            $("#chooseSideBanner").text("Opponent took white ...");
-     
+            $("#chooseSideBanner").text("Opponent took black ...");
+            $("#chessboardContainer").attr("class", "whiteFlip");
+            $("#chessboard").attr("id", "chessboardWhite");
             setTimeout(function(){ 
                 socket.emit("side-send", side); 
             }, 3000);
@@ -352,6 +355,7 @@ $(".chessBlock").on("click", function (){
 
     
 })
+
 
 socket.on("move", data =>{
     console.log(data);
