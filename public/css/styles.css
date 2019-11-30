@@ -24,12 +24,79 @@ body {
 
 #titleCardSmall {
     height: 200px;
-    width: 200px;
+    width: auto;
     /* logomakr.com/1VXIun */
     background-image: url("./../assets/mainLOGO.png");
     background-size: contain;
     background-repeat: no-repeat;
-    margin: 0 auto;
+    background-position: center;
+    margin: auto;
+ 
+}
+.chooseSide{
+    height: 100%;
+    width: 15%;
+    background-color: rgb(34, 194, 223);
+    opacity: .1;
+    border-radius: 100px;
+    transition: all .5s ease-in-out; 
+    border: 2px solid black;
+    font-size: 30px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.chooseSide:hover{
+    transform: scale(1.2); 
+    font-family: 'Audiowide', cursive;
+    text-align: center;
+    -webkit-animation-name: flasher;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite;
+    /* Safari 4.0 - 8.0 */
+    animation-name: flasher;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    
+}
+
+#blackside{
+    opacity: unset;
+    background-image: url("./../assets/black_horse_select.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 10px;
+    color: white; 
+    float: left;
+}
+#whiteside{
+    opacity: unset;
+    background-image: url("./../assets/white_horse_select.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 10px;
+    color: black;
+    float: right;
+}
+#chooseSideBanner{
+    border-radius: 25px;
+    font-family: 'Audiowide', cursive;
+    text-align: center;
+    -webkit-animation-name: flasher;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 5s;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite;
+    /* Safari 4.0 - 8.0 */
+    animation-name: flasher;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    
 }
 
 #loginBox {
@@ -379,15 +446,16 @@ body {
 }
 
 #chessboardContainer {
+    opacity: .25;
     width: 700px;
     height: 650px;
-
     margin: 0 auto;
 
 }
 
+
 #chessboard {
-    width: auto;
+    min-width: 500px;
     margin: 0 auto;
 }
 
