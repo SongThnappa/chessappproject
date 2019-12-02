@@ -42,7 +42,7 @@ $(document).ready(function () {
         });
 
         localStorage.setItem("player", "Player1");
-        $(".card-body").append($("<a>").attr("href", "game/"+gameID).text("JOIN NOW"))
+        $(".card-body").append($("<a>").attr("href", "https://chessappproject.herokuapp.com/game/"+gameID).text("JOIN NOW"))
        
 
     })
