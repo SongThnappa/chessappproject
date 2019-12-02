@@ -1,7 +1,7 @@
 
 
 $(document).ready(function() {
-    var socket = io("https://chessappproject.herokuapp.com/:3001/");
+    var socket = io.connect(window.location.hostname);
     var side;
     var sideChoosen = false;
     var checked = [];
