@@ -1,9 +1,10 @@
 
 
 $(document).ready(function() {
-    var socket = io("http://localhost:3001");
+    var socket = io("https://chessappproject.herokuapp.com/:3001");
     var side;
     var sideChoosen = false;
+    var checked = [];
  
     $(document).on("click", "#blackside", function(){
         if(sideChoosen === true){
@@ -180,6 +181,64 @@ function oppossingSideFunc(){
     
 };
 
+$(".chessBlock").on("click", function (){
+    console.log("chessblock click");
+   
+    
+   
+    if(turn===side){
+        if($(this).attr("status") === oppossingSide && move[0] === undefined){
+            console.log("first if statement")
+            return
+            
+        }
+        else if($(this).attr("status")==="error"){
+            console.log("2nd if statement")
+            return
+        }
+        else if($(this).attr("status")==="empty" && move[0] === undefined){
+            console.log("3rd if statement")
+            return
+        }
+        else if ($(this).attr("value") === checked[0]){
+            $(this).attr("flash", "flashOff")
+            checked =[];
+            console.log("4th if statement")
+                
+            return
+    
+         }
+    
+       
+         else if(checked [0] === undefined ){
+            console.log("turn on flash")
+         
+            $(this).attr("flash", "flashOn")
+            checked.push($(this).attr("value"));
+            console.log(checked[0]);
+        
+        }
+
+        else {
+          
+            // Holy shit it worked
+            console.log("turn off flash")
+            
+            $("[value ="+ checked[0] +"]").attr("flash", "flashOff");
+            $(this).attr("flash", "flashOn")
+            checked=[];
+            checked.push($(this).attr("value"));
+                
+            }
+           
+        
+    }
+    else{}
+
+    
+})
+
+
 var move = [];
 var piece;
 var moving = false;
@@ -197,7 +256,7 @@ $(".chessBlock").on("click", function () {
 
     }
     else{
-        if( pieceSelected===true && move[1] === undefined && $(this).attr("status") != "empty" && $(this).attr("status") != oppossingSide){
+        if( pieceSelected===true && move[1] === undefined && $(this).attr("status") !== "empty" && $(this).attr("status") !== oppossingSide){
             oldSpace = $(this);
             console.log(oldSpace)
             console.log("new piece selected to move")
@@ -237,6 +296,7 @@ $(".chessBlock").on("click", function () {
                 $(this).attr("status", side);
                 $(this).attr("id", piece)
                 $(this).attr("style", "");
+                // $(this).attr("style", "border: 5px solid rgb(34, 194, 223);")
 
                 moveSend.push(oldSpace);
                 moveSend.push(move);
@@ -259,6 +319,7 @@ $(".chessBlock").on("click", function () {
                 $(jQvarUser).attr("style", "opacity: .25;");
                 var jQvarOpponent = "#"+oppossingSide+"side";
                 $(jQvarOpponent).attr("style", "opacity: .9;");
+               
 
                     //testing purposes
                     // switcher = opposingSide;
@@ -280,6 +341,7 @@ $(".chessBlock").on("click", function () {
                 $(this).attr("status", side);
                 $(this).attr("id", piece)
                 $(this).attr("style", "");
+                // $(this).attr("style", "border: 5px solid rgb(34, 194, 223);")
 
                 moveSend.push(oldSpace);
                 moveSend.push(move);
@@ -306,6 +368,7 @@ $(".chessBlock").on("click", function () {
                 $(jQvarUser).attr("style", "opacity: .25;");
                 var jQvarOpponent = "#"+oppossingSide+"side";
                 $(jQvarOpponent).attr("style", "opacity: .9;");
+                
             }
         }
 
@@ -316,45 +379,9 @@ $(".chessBlock").on("click", function () {
 //sudo need logic that grabs player 1 or player 2 status such that you can subscribe to the chat name as a variable
 // I need logic that also discriminates localhost/game/gameID:PORT as the serving host for the chat.
 
-var checked;
 
-$(".chessBlock").on("click", function (){
-    if(turn===side){
-        if($(this).attr("status") === oppossingSide && move[0] === undefined){
-            return
-        }
-        if($(this).attr("status")==="error"){
-            return
-        }
-        if (checked === $(this)){
-            console.log("returned")
-                
-            return
-    
-         }
-    
-        if ($(this).attr("style") === "border: 5px solid yellow;"){
-        $(this).attr("style", "")
-        }
-        else{
-            // Holy shit it worked
-            $(this).attr("style", "border: 5px solid yellow;");
-           
-          
-            if (checked){
-                checked.attr("style","");
-                checked = $(this);
-            }
-            else{
-                checked= $(this);
-            }
-          }
 
-    }
-    else{}
 
-    
-})
 
 
 socket.on("move", data =>{
@@ -366,7 +393,7 @@ socket.on("move", data =>{
     var piece = $("."+target).attr("id");
     var status = $("."+target).attr("status")
     console.log(piece)
-    $("."+final).attr("id", piece).attr("status", status);
+    $("."+final).attr("id", piece).attr("status", status).attr("flash","flashOn");
     $("."+target).attr("id", "").attr("status", "empty");
     var final = "";
     var target = "";

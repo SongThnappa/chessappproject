@@ -5,35 +5,39 @@ var halfway = false;
 io.on("connection", socket => {
 
 
-   if (sideTaken != undefined){
-    console.log("if statement undefined")
+   if (sideTaken !== undefined){
+   
        socket.emit("side-checker", sideTaken);
-       console.log(sideTaken)
+      
    }
+
+
+
+
     socket.on("side-send", (side)=>{
-        console.log("TCL: halfway", halfway)
-        console.log("TCL: sideTaken", sideTaken)
+        // console.log("TCL: halfway", halfway)
+        // console.log("TCL: sideTaken", sideTaken)
         
         if(halfway === true && side !== sideTaken){
-            console.log("if statement 1")
+            // console.log("if statement 1")
             socket.emit("side-checker", "start");
             socket.broadcast.emit("side-checker", "start");
             //need to use this once games are started and I have actual rooms created. Doing hack in meantime.
 
             // io.in('game').emit('big-announcement', 'the game will start soon');
 
-            console.log("start")
+            // console.log("start")
             halfway=false;
             sideTaken="";
         }
         else if(halfway === true && side === sideTaken){
-            console.log("if statement 2")
+            // console.log("if statement 2")
             socket.emit("side-checker", "side taken");
-            console.log("side taken")
+            // console.log("side taken")
           
         }
         else{
-            console.log("if statement 3")
+            // console.log("if statement 3")
             halfway=true;
             
             sideTaken=side;
@@ -45,6 +49,7 @@ io.on("connection", socket => {
         
     })
 
+     
 
 
 

@@ -166,6 +166,18 @@ body {
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
+[flash = "flashOn"]{
+    -webkit-animation-name: flasher;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: infinite;
+    /* Safari 4.0 - 8.0 */
+    animation-name: flasher;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+}
 
 .flash {
     -webkit-animation-name: flasher;
@@ -509,59 +521,106 @@ div.whiteFlip td{
 #wp {
     background-image: url("./../assets/white_pawn.png");
 
-}
 
+}
+#wp:hover{
+    border: 2px solid red;
+}
 #wkn {
     background-image: url("./../assets/white_knight.png")
+}
+#wkn:hover{
+    border: 2px solid red;
 }
 
 #wr {
     background-image: url("./../assets/white_rook.png")
 }
+#wr:hover{
+    border: 2px solid red;
+}
 
 #wq {
     background-image: url("./../assets/white_queen.png")
+}
+#wq:hover{
+    border: 2px solid red;
 }
 
 #wkg {
     background-image: url("./../assets/white_king.png")
 }
+#wkg:hover{
+    border: 2px solid red;
+}
 
 #wb {
     background-image: url("./../assets/white_bishop.png")
+}
+#wb:hover{
+    border: 2px solid red;
 }
 
 #bp {
     background-image: url("./../assets/black_pawn.png")
 }
+#bp:hover{
+    border: 2px solid red;
+}
 
 #bkn {
     background-image: url("./../assets/black_knight.png")
+}
+#bkn:hover{
+    border: 2px solid red;
 }
 
 #br {
     background-image: url("./../assets/black_rook.png")
 }
+#br:hover{
+    border: 2px solid red;
+}
 
 #bq {
     background-image: url("./../assets/black_queen.png")
+}
+#bq:hover{
+    border: 2px solid red;
 }
 
 #bkg {
     background-image: url("./../assets/black_king.png")
 }
+#bkg:hover{
+    border: 2px solid red;
+}
 
 #bb {
     background-image: url("./../assets/black_bishop.png")
+}
+#bb:hover{
+    border: 2px solid red;
 }
 
 .file {
     background-color: rgb(34, 194, 223);
     text-align: center;
     width: 30px;
+    opacity: .3;
 }
 
 .rank {
     background-color: rgb(34, 194, 223);
     text-align: center;
+    
+    opacity: .2;
+}
+.rank:hover{
+    opacity: .6;
+    color: white;
+}
+.file:hover{
+    opacity: .6;
+    color: white;
 }
