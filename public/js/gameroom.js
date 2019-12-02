@@ -1,7 +1,9 @@
+// if this does not work here is my presentation of it working locally
 
+//https://www.youtube.com/watch?v=hsAspteZ9mM&feature=youtu.be
 
 $(document).ready(function() {
-    var socket = io("https://chessappproject.herokuapp.com/:3001/");
+    var socket = io("https://chessappproject.herokuapp.com:3001/socket.io/socket.io.js");
     var side;
     var sideChoosen = false;
     var checked = [];
