@@ -42,7 +42,7 @@ $(document).ready(function () {
         });
 
         localStorage.setItem("player", "Player1");
-        $(".newGame").append($("<a>").attr("href", "game/"+gameID))
+        $(".card-body").append($("<a>").attr("href", "game/"+gameID).text("JOIN NOW"))
        
 
     })
